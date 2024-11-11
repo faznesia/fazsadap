@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #444;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.loading p {
+    font-weight: bold;
+    margin-top: 10px;
+    animation: fadeinout 1.5s infinite;
+}
+
+@keyframes fadeinout {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}

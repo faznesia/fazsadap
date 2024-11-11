@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proses Penyadapan</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #00FF00;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading-message {
+            font-size: 1.2em;
+            margin-top: 20px;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .spinner {
+            margin: 20px auto;
+            border: 4px solid #00FF00;
+            border-radius: 50%;
+            border-top: 4px solid transparent;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h2>Proses Penyadapan Dimulai...</h2>
+    <div class="spinner"></div>
+    <div class="loading-message" id="loadingMessages">
+        <!-- Hacking-style loading messages will appear here -->
+    </div>
+
+    <script>
+        // Array of simulated "hacking" messages
+        const messages = [
+            "Menyambungkan ke server target...",
+            "Mengakses database...",
+            "Menjalankan proses enkripsi...",
+            "Mencari data login pengguna...",
+            "Menghubungkan ke server WhatsApp...",
+            "Mengambil data chat terenkripsi...",
+            "Dekripsi pesan dalam proses...",
+            "Mengumpulkan data multimedia...",
+            "Menganalisis kontak target...",
+            "Proses hampir selesai...",
+            "Data ditemukan. Menyusun hasil..."
+        ];
+
+        const loadingMessages = document.getElementById("loadingMessages");
+        let index = 0;
+
+        // Display each message with a delay
+        function displayMessages() {
+            if (index < messages.length) {
+                const message = document.createElement("p");
+                message.textContent = messages[index];
+                loadingMessages.appendChild(message);
+                index++;
+                setTimeout(displayMessages, 1500); // Display a new message every 1.5 seconds
+            } else {
+                // Redirect to the result page after all messages are displayed
+                setTimeout(() => {
+                    window.location.href = "result.html";
+                }, 2000);
+            }
+        }
+
+        // Start displaying messages
+        displayMessages();
+    </script>
+</body>
+</html>

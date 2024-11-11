@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Penyadapan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Hasil Penyadapan</h2>
+    <p>KLIK BUKA WHATSAPP JIKA GAGAL ULANG TERUS SAMPE BERHASIL KLIK KEMBALI KE BERANDA UNTUK ULANG</p>
+    <p>Jaga privasi Anda dan hargai privasi orang lain.</p>
+
+    <!-- WhatsApp button that links to the entered number -->
+    <a id="whatsappLink" class="btn" target="_blank">Buka WhatsApp</a>
+
+    <a href="index.html" class="btn">Kembali ke Beranda</a>
+
+    <script>
+        // Get the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetNumber = urlParams.get('target');
+
+        // Set the WhatsApp link if target number is provided
+        if (targetNumber) {
+            document.getElementById('whatsappLink').href = `https://wa.me/${targetNumber}`;
+        } else {
+            document.getElementById('whatsappLink').innerText = "Nomor tidak valid";
+            document.getElementById('whatsappLink').classList.add('disabled');
+        }
+    </script>
+</body>
+</html>
